@@ -1,4 +1,4 @@
-import "./feedbackVoting.css";
+import "./feedBackVoting.css";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { useSelector } from "react-redux";
