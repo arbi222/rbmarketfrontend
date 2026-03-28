@@ -1,0 +1,52 @@
+.phone-input{
+    margin-bottom: 10px;
+}
+
+.email-verified{
+    margin: 0 0 20px;
+    font-size: 15px;
+    color: var(--color-primary);
+}
+
+.verified{
+    color: var(--color-primary);
+}
+
+.not-verified{
+    color: red;
+}
+
+.email-not-verified{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    p{
+        font-size: 14px;
+        margin: 0;
+        color: red;
+    }
+
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--color-primary);
+
+        &:hover{
+            text-decoration: underline;
+        }
+
+        &.disabled-verify-btn{
+            text-decoration: none;
+            cursor: auto;
+            color: var(--color-primary-style);
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .email-not-verified{
+       justify-content: center;
+    }
+}

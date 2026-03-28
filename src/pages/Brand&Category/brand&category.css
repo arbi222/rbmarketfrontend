@@ -1,0 +1,211 @@
+.brand-category-page{
+    max-width: 1050px;
+    margin: 10px auto 0;
+}
+
+.market-logo-brand-category-page{
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-grey);
+    background-color: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-category-pageWrapper{
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.brand-category-header{
+    margin-bottom: 40px;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.mini-page-header{
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    color: var(--color-text);
+    text-align: left;
+}
+
+.photo-brand-category-updating{
+    padding: 0 0 40px;
+    border-bottom: 1px solid var(--third-grey);
+}
+
+.drag-drop-brand-photo{
+    margin: 30px auto 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 270px;
+    height: 270px;
+    border: 2px dashed var(--third-grey);
+    border-radius: 50%;
+    padding: 0;
+}
+
+.drag-drop-category-photo{
+    margin: 30px auto 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    border: 2px dashed var(--third-grey);
+    padding: 0;
+}
+
+.dragging-brand-category-photo{
+    border-color: var(--color-primary);
+    background-color: #f0f8ff;
+}
+
+.drag-header-details-brand-category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.upload-image-btn-brand-category-photo{
+    display: block;
+    margin: 30px auto 0;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 1.05rem;
+    border: 1px solid var(--third-grey);
+    background-color: var(--color-bg);
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: var(--primary-grey);
+    }
+}
+
+.brand-photo-uploaded-section{
+    position: relative;
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.brand-photo-uploaded{
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+}
+
+.category-photo-uploaded-section{
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: 350px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.category-photo-uploaded{
+    border-radius: 20px;
+    width: 100%;
+    height: 350px;
+}
+
+.delete-brand-photo-btn{
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    cursor: pointer;
+    border: 3px solid var(--color-bg);
+    border-radius: 50%;
+    padding: 5px 8px;
+    background-color: var(--primary-grey);
+
+    &:hover{
+        background-color: var(--third-grey);
+    }
+}
+
+.delete-category-photo-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    border: 3px solid var(--color-bg);
+    border-radius: 50%;
+    padding: 5px 8px;
+    background-color: var(--primary-grey);
+
+    &:hover{
+        background-color: var(--third-grey);
+    }
+}
+
+.main-info-brand-category-section{
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--third-grey);
+}
+
+.update-brand-category-input-container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.update-brand-category-input{
+    input{
+        width: 100%;
+    }
+}
+
+.desc-brand-category{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    resize: none;
+    height: 120px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.025rem;
+    outline: none;
+    border: 1px solid var(--secondary-grey);
+
+    &:focus{
+        border: 1px solid #000;
+    }
+}
+
+.update-brand-category-btn{
+    display: block;
+    margin: 30px auto; 
+    width: 300px;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: var(--color-primary-style);
+    }
+
+    &.disabled-btn{
+        background-color: var(--third-grey);
+    }
+}

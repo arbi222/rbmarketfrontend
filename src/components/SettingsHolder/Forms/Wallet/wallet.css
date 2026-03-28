@@ -1,0 +1,84 @@
+.payment-container{
+    position: relative;
+}
+
+.payment-header{
+    color: var(--color-text);
+
+    span{
+        color: var(--color-primary);
+    }
+}
+
+.withdrawal-item{
+    background-color: var(--primary-grey);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div{
+        margin-left: 10px;
+
+        h3{
+            margin: 0;
+            color: var(--color-text);
+        }
+
+        p{
+            margin: 2px 0 0;
+            font-size: 13px;
+            color: var(--color-text);
+        }
+    }
+    
+    button{
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: var(--color-primary);
+        color: var(--color-bg);
+        border: 1px solid var(--color-text);
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 15px;
+        font-weight: bold;
+
+        &:hover{
+            background-color: var(--color-primary-style);
+        }
+    }
+}
+
+.withdrawal-container{
+    width: 400px;
+    margin-bottom: 10px;
+
+    .withdraw-btn{
+        background-color: #2cad12;
+
+        &:hover{
+            background-color: #299e12;
+        }
+    }
+}
+
+@media (max-width: 776px){
+    .payment-header{
+        text-align: center;
+    }
+
+    .withdrawal-container{
+        margin: 0 auto;
+    }
+}  
+
+@media (max-width: 600px){
+    .payment-header{
+        text-align: center;
+    }
+
+    .withdrawal-container{
+        margin: 0 auto;
+        width: 90%;
+    }
+}   

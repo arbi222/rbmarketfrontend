@@ -1,0 +1,22 @@
+.brands-admin-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.brand-loading-screen{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.no-brands-admin{
+    color: var(--color-text);
+}
+
+@media (max-width: 835px){
+    .brands-admin-container{
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}

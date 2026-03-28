@@ -1,0 +1,9 @@
+.feedback-container-header{
+    color: var(--color-text);
+}
+
+@media (max-width: 670px){
+    .feedback-container-header{
+        text-align: center;
+    }
+}

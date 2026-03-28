@@ -1,0 +1,141 @@
+.item-specifications-container{
+    width: 95%;
+    box-sizing: border-box;
+    max-width: var(--max-width);
+    margin: 0 auto 30px;
+    padding: 20px;
+}
+
+.item-sp-title{
+    display: inline-block;
+    border: 2px solid var(--primary-grey);
+    border-bottom-color: var(--color-bg);
+    box-shadow: 4px -2px 0 var(--color-bg);
+    border-radius: 5px 5px 0 0;
+    padding: 15px 20px;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item-sp-inside{
+    background-color: var(--color-bg);
+    border: 2px solid var(--primary-grey);
+    border-radius: 0 5px 5px;
+    padding: 15px 20px;
+    margin-top: -2px;
+}
+
+.pre-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--secondary-grey);
+
+    p{
+        display: flex;
+        gap: 10px;
+    }
+
+    div{
+        font-size: 14px;
+    }
+
+    .item-id{
+        font-size: 15px;
+    }
+}
+
+.item-specifics{
+    h2{
+        color: var(--color-text);
+        margin-bottom: 5px;
+    }
+
+    .specific{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: -7px;
+
+        p{
+            color: var(--secondary-grey);
+        }
+
+        a{
+            color: var(--color-text);
+        }
+    }
+}
+
+.item-description{
+    h2{
+        color: var(--color-text);
+    }
+
+    p{
+        color: var(--color-text);
+        white-space: pre-wrap;
+        font-size: 15px;
+        line-height: 1.5rem;
+        display: inline;
+    }
+}
+
+@media (max-width: 700px) {
+    .item-sp-title{
+        display: flex;
+        justify-content: center;
+        cursor: default;
+    }
+
+    .item-sp-inside{
+        border-top-color: var(--color-bg);
+        border-radius: 0 0px 5px 5px;
+        margin-top: -3px;
+    }
+
+    .pre-info{
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        p{
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-id{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div{
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    .item-specifics{
+        h2{
+            text-align: center;
+        }
+
+        .specific{
+            justify-content: center;
+        }
+    }
+
+    .item-description{
+        h2{
+            text-align: center;
+        }
+
+        p{
+            display: block;
+            text-align: center;
+        }
+    }
+}

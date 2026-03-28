@@ -1,0 +1,19 @@
+.admin-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 30px 15px;
+}
+
+.loading-screen-admin{
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+@media (max-width: 835px){
+    .admin-dashboard {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+}

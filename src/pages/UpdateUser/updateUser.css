@@ -1,0 +1,168 @@
+.updateUser-page{
+    max-width: 1050px;
+    margin: 10px auto 0;
+}
+
+.market-logo-update-page{
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-grey);
+    background-color: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.updateUser-pageWrapper{
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.updateUser-header{
+    margin-bottom: 40px;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.profilepicture-updating{
+    padding: 0 0 40px;
+    border-bottom: 1px solid var(--third-grey);
+}
+
+.mini-header{
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.drag-drop-profile-img{
+    margin: 30px auto 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 270px;
+    height: 270px;
+    border: 2px dashed var(--third-grey);
+    border-radius: 50%;
+    padding: 0;
+}
+
+.dragging-profile-img{
+    border-color: var(--color-primary);
+    background-color: #f0f8ff;
+}
+
+.drag-header-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.upload-image-btn-user-update{
+    display: block;
+    margin: 30px auto 0;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 1.05rem;
+    border: 1px solid var(--third-grey);
+    background-color: var(--color-bg);
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: var(--primary-grey);
+    }
+}
+
+.profile-img-uploaded-section{
+    position: relative;
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.profile-img-uploaded{
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+}
+
+.delete-profile-img-btn{
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    cursor: pointer;
+    border: 3px solid var(--color-bg);
+    border-radius: 50%;
+    padding: 5px 8px;
+    background-color: var(--primary-grey);
+
+    &:hover{
+        background-color: var(--third-grey);
+    }
+}
+
+.main-user-data-section{
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--third-grey);
+}
+
+.update-user-input-container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.update-user-input{
+    input{
+        width: 100%;
+    }
+}
+
+.about-desc-user{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    resize: none;
+    height: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.025rem;
+    outline: none;
+    border: 1px solid var(--secondary-grey);
+
+    &:focus{
+        border: 1px solid #000;
+    }
+}
+
+.updateUser-btn{
+    display: block;
+    margin: 30px auto; 
+    width: 300px;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: var(--color-primary-style);
+    }
+
+    &.disabled-btn{
+        background-color: var(--third-grey);
+    }
+}

@@ -1,0 +1,275 @@
+.j-home{
+    background-color: var(--primary-grey);
+    width: 90%;
+    box-sizing: border-box;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    padding: 20px;
+
+    h1{
+        margin-top: 0;
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1.1rem;
+    }
+}
+
+.j-left-part{
+    flex: 1 1 45%;
+    margin-left: 20px;
+}
+
+.j-left-part-auth{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+
+  p{
+    margin-bottom: 5px;
+  }
+}
+
+.j-right-part{
+    flex: 1 1 45%;
+    margin-right: 20px;
+    text-align: end;
+}
+
+.j-start-btn, .j-join-btn{
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.25rem;
+    color: var(--color-bg);
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: var(--popUpShadow);
+    transition: all 0.3s ease;
+}
+
+.j-start-btn{
+    background-color: var(--color-accent);
+
+    &:hover{
+      background-color: var(--color-accent-style);
+      transform: translateY(-2px);
+    }
+
+    &:active{
+      transform: translateY(0px);
+      box-shadow: none;
+    }
+}
+
+.j-join-btn{
+    background-color: var(--color-primary);
+
+    &:hover{
+      background-color: var(--color-primary-style);
+      transform: translateY(-2px);
+    }
+
+    &:active{
+      transform: translateY(0px);
+      box-shadow: none;
+    }
+}
+
+@media (max-width: 900px) {
+  .j-home {
+    flex-direction: column;
+    padding-left: 0; 
+    text-align: center;
+    gap: 10px;
+  }
+
+  .j-left-part,
+  .j-right-part {
+    flex: 1 1 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .j-left-part-auth{
+    flex-direction: column;
+
+    p{
+      margin-bottom: 20px;
+    }
+  }
+
+  .j-home h1 {
+    font-size: 1.5rem; 
+  }
+
+  .j-home p {
+    font-size: 1rem; 
+  }
+
+  .j-start-btn{
+    margin-bottom: 20px;
+  }
+
+  .j-start-btn,
+  .j-join-btn {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+    .j-home{
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .j-home p {
+        font-size: 0.9rem; 
+    }
+}
+
+
+.j-selling{
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--max-width);
+  margin: 0 auto 30px;
+  padding: 20px;
+  background-color: #ffead3;
+
+  h1{
+    text-align: center;
+    color: var(--color-text);
+    letter-spacing: 2px;
+  }
+
+  .j-paragraphs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+    div{
+      text-align: center;
+      max-width: 450px;
+      color: var(--color-text);
+      letter-spacing: 1px;
+
+      h2{
+        color: royalblue;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px){
+    .j-selling{
+      width: 100%;
+
+      h1{
+        font-size: 1.7rem;
+        text-align: start;
+      }
+    
+      .j-paragraphs{
+        gap: 0px;
+        flex-direction: column;
+      
+        div{
+          text-align: start;
+          max-width: 100%;
+
+          h2{
+            margin: 5px auto;
+          }
+
+          p{
+            margin: 5px auto 10px;
+          }
+        }
+      }
+    }
+}
+
+.j-howtosell{
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 40px;
+  background-color: #fff8d5;
+
+  h1, .underheader-p{
+    text-align: center;
+    color: var(--color-text);
+    margin: 0 auto 10px;
+    letter-spacing: 2px;
+  }
+
+  .j-paragraph{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    gap: 50px;
+
+    div{
+      text-align: center;
+      width: 350px;
+      max-width: 400px;
+      color: var(--color-text);
+      letter-spacing: 1px;
+
+      h2{
+          color: brown;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px){
+    .j-howtosell{
+      padding: 20px;
+
+      h1, .underheader-p{
+        text-align: start;
+        letter-spacing: 1px;
+      }
+    
+      .j-paragraph{
+        width: 100%;
+        gap: 0px;
+        flex-direction: column;
+        align-items: start;
+      
+        div{
+          text-align: start;
+          width: auto;
+          max-width: auto;
+
+          h2{
+            margin: 15px auto 5px;
+          }
+
+          p{
+            margin: 5px auto 10px;
+          }
+        }
+      }
+    }
+}
+
+@media (min-width: 1544px) {
+  .j-selling, .j-howtosell{
+    border-radius: 10px;
+  }
+}

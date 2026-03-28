@@ -1,0 +1,25 @@
+.email-verify-message{
+    text-align: center;
+
+    .loading-email-loader{
+        margin-top: 5rem;
+    }
+
+    p{
+        font-size: large;
+        font-weight: bold;
+        margin-top: 5rem;    
+        display: inline-block;
+        padding: 15px;
+        border-radius: 15px;
+        color: var(--color-bg);
+    }
+}
+
+.error-email-message{
+    background-color: rgba(196, 28, 28, 0.863);
+}
+
+.success-verification-email{
+    background-color: var(--color-primary);
+}

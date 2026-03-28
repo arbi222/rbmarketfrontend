@@ -1,0 +1,76 @@
+.funds-header{
+    color: var(--color-text);
+
+    span{
+        color: var(--color-primary);
+    }
+}
+
+.not-enough-funds{
+    margin-top: 0;
+    color: #6d6018;
+}
+
+.adding-funds-container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.fund-item{
+    background-color: var(--primary-grey);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div{
+        margin-left: 10px;
+
+        h3{
+            margin: 0;
+            color: var(--color-text);
+        }
+
+        p{
+            margin: 2px 0 0;
+            font-size: 13px;
+            color: var(--color-text);
+        }
+    }
+    
+    button{
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: var(--color-primary);
+        color: var(--color-bg);
+        border: 1px solid var(--color-text);
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 15px;
+        font-weight: bold;
+
+        &:hover{
+            background-color: var(--color-primary-style);
+        }
+    }
+}
+
+@media (max-width: 776px){
+    .funds-header{
+        text-align: center;
+    }
+
+    .adding-funds-container{
+        margin: 0 auto 25px;
+    }
+} 
+
+@media (max-width: 600px){
+    .adding-funds-container{
+        margin: 0 auto 25px;
+        width: 90%;
+    }
+}   

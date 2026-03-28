@@ -1,0 +1,303 @@
+.dataShowing-headers{
+    display: flex;
+    color: var(--color-text);
+}
+
+.dataShowing-hr{
+    margin: 0 auto 10px;
+    border-style: solid none none;
+    border-top: 1px solid var(--secondary-grey);
+}
+
+.dataDividing-hr{
+    margin: 0 auto;
+    border-style: solid none none;
+    border-top: 1px solid #2394df;
+}
+
+.order-header, .order-id-result, .image-header, .image-result, 
+.joined-header, .joined-result,
+.price-header, .price-result{
+    flex: 0.5;
+}
+
+.name-header, .name-result, 
+.email-header, .email-result, .review-result{
+    flex: 1;
+}
+
+.transaction-header{
+    flex: 0.5;
+}
+
+.settings-data-header, .edit-data-result{
+    flex: 0.1;
+}
+
+.filtering{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 10px !important;
+
+   .filter-admin-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        background-color: transparent;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--third-grey);
+        }
+    }
+}
+
+.dataShowing-results{
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+    margin-top: 5px;
+}
+
+.order-id-result{
+    margin-right: 10px;
+
+    a{
+        text-decoration: none;
+        color: var(--color-text);
+
+        &:hover{
+            text-decoration: underline;
+            color: var(--color-primary);
+        }
+    }
+}
+
+.image-header, .order-header{
+    margin-right: 10px;
+}
+
+.image-result{
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
+.name-result{
+    a{
+        text-decoration: none;
+        color: var(--color-text);
+        display: block;
+        max-width: 250px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.email-result{
+    p{
+        word-break: break-all;
+        width: 250px;
+    }
+}
+
+.verified-email{
+    color: var(--color-primary);
+}
+
+.not-verified-email{
+    color: red;
+}
+
+.order-type{
+    margin: 0 10px;
+}
+
+.stock-available{
+    margin-right: 10px;
+}
+
+.pending-status, .frozen-status{
+    color: var(--color-accent);
+}
+.paid-status, .active-status{
+    color: var(--color-primary);
+}
+.failed-status, .banned-status{
+    color: red;
+}
+.cancelled-status{
+    color: var(--secondary-grey);
+}
+.expired-status{
+    color: rgb(141, 41, 161);
+}
+.delivered-status{
+    color: green;
+}   
+
+.transaction-product-link{
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.review-result{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    p{
+        max-width: 200px;
+    }
+}
+
+.positive-vote-review{
+    color: var(--color-primary);
+}
+
+.negative-vote-review{
+    color: rgb(216, 35, 35);
+}
+
+.edit-data-result{
+    position: relative;
+
+    .edit-data-btn{
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        padding: 2px 5px;
+
+        &:hover{
+            background-color: var(--third-grey);
+        }
+    }
+}
+
+.setstatus-container{
+    margin: 40px auto 20px;   
+    
+    .status-choices{
+        display: flex;
+        justify-content: center;
+        margin-left: 40px;
+        align-items: center;
+
+        label{
+            width: 150px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: bold;
+            cursor: pointer;
+
+            input{
+                transform: scale(1.7); 
+                margin-bottom: 5px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .status-reason{
+        textarea{
+            box-sizing: border-box;
+            resize: none;
+            width: 100%;
+            height: 120px;
+            border-radius: 10px;
+            border: none;
+            outline: 1px solid var(--color-text);
+            padding: 8px;
+            font-size: large;
+
+            &:focus{
+                outline: 2px solid var(--color-primary);
+            }
+        }
+    }
+}
+
+@media (max-width: 650px){
+    .admin-headers{
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .dataShowing-hr{
+        margin-bottom: 5px;
+    }
+
+    .image-result{
+        img{
+            width: 43px;
+            height: 43px;
+        }
+    }
+
+    .name-result{
+        a{
+            font-size: 14px;
+            max-width: 200px;
+        }
+    }
+
+    .order-id-result{
+        a{
+            font-size: 14px;
+        }
+    }
+
+    .email-result{
+        p{
+            font-size: 14px;
+            max-width: 200px;
+        }
+    }
+
+    .price-result, .joined-result{
+        font-size: 14px;
+    }
+
+    .review-result{
+        p{  
+            font-size: 14px;
+        }
+    }
+
+    .filtering{
+        gap: 0;
+
+        h3{
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 535px){
+    .joined-header, .joined-result, 
+    .image-header, .image-result,
+    .stock-header-admin{
+        display: none;
+    }
+
+    .from-seller-header{
+        flex: 0.5;
+    }
+}   

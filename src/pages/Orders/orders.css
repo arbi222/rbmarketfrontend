@@ -1,0 +1,33 @@
+.orders-page{
+    width: 95%;
+    box-sizing: border-box;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.no-orders{
+    max-width: var(--max-width);
+    margin: 100px auto;
+    text-align: center;
+}
+
+.orders-loading-screen{
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+}
+
+.order-header-filter{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.orders-page-container{
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+}
+
+.orders-page-wrapper{
+    margin-bottom: 100px;
+}

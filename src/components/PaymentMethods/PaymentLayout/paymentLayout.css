@@ -1,0 +1,39 @@
+.payment-method{
+    margin-top: 40px;
+
+    label{
+        width: 250px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &.disabled-state{
+            color: var(--third-grey);
+            cursor: default;
+
+            img{
+                filter: grayscale(100%);
+            }
+        }
+
+        input{
+            transform: scale(1.8); 
+            margin-right: 12px;
+            cursor: pointer;
+
+            &:disabled{
+                cursor: default;
+            }
+        }
+
+        img{
+            width: 50px;
+            height: 30px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+    }
+}

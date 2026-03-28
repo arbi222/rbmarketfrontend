@@ -1,0 +1,28 @@
+.categories_panel{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 45px;
+    /* border: 1px solid black; */
+
+    button{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        color: var(--secondary-grey);
+        min-width: 50px;
+        max-width: 55px;
+        text-align: left;
+        line-height: 1rem;
+        cursor: pointer;
+    }
+
+    label{
+        cursor: pointer;
+        margin-top: 3px;
+    }
+}
+
+.icon-rotate{
+    transform: rotate(180deg);
+}

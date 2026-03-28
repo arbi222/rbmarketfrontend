@@ -1,0 +1,32 @@
+.stat-card {
+  text-align: center;
+  background: var(--color-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.stat-card h3 {
+  font-size: 1rem;
+  color: var(--secondary-grey);
+}
+
+.stat-card p {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+@media (max-width: 650px){
+    .stat-card {
+      padding: 15px;
+
+      h3{
+        font-size: 0.8rem;
+      }
+
+      p{
+        font-size: 20px;
+      }
+    }
+}

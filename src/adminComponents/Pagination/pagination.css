@@ -1,0 +1,57 @@
+.admin-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  gap: 15px;
+}
+
+.admin-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: none;
+  background-color: transparent;
+}
+
+.number-btn-admin{
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    padding-bottom: 3px;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.f-prev-btn-admin, .f-next-btn-admin{
+    padding: 3px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.number-btn-admin:hover {
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.number-btn-admin.active {
+  border-bottom: 2px solid var(--color-text);
+  font-weight: bold;
+}
+
+.number-btn-admin.active:hover {
+  color: var(--color-text);
+}
+
+@media (max-width: 670px){
+    .admin-pagination {
+      gap: 8px;
+    }
+
+    .f-prev-btn-admin, .f-next-btn-admin{
+        padding: 2.5px 5px;
+    }
+}
+
+@media (max-width: 435px){
+    
+}

@@ -1,0 +1,330 @@
+.listItem-page{
+    max-width: 1050px;
+    margin: 10px auto 0;
+}
+
+.listItem-wrapper{
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.market-logo-navbar{
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-grey);
+    background-color: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.listing-header{
+    margin-bottom: 40px;
+    color: var(--color-text);
+}
+
+.image-uploading{
+    padding: 0 0 40px;
+    border-bottom: 1px solid var(--third-grey);
+}
+
+.under-header{
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    color: var(--color-text);
+}
+
+.image-uploaded-section{
+    position: relative;
+    display: inline-block;
+}
+
+.image-uploaded{
+    margin-top: 20px;
+    border-radius: 20px;
+    max-width: 650px;
+    max-height: 500px;
+}
+
+.delete-uploaded-img{
+    position: absolute;
+    top: 33px;
+    right: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 8px;
+    background-color: var(--primary-grey);
+
+    &:hover{
+        background-color: var(--third-grey);
+    }
+}
+
+.drag-drop{
+    margin-top: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px dashed var(--third-grey);
+    border-radius: 20px;
+    padding: 100px;
+}
+
+.dragging {
+  border-color: var(--color-primary);
+  background-color: #f0f8ff;
+}
+
+.drag-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.upload-image-btn{
+    display: block;
+    margin: 30px auto 0;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 1.05rem;
+    border: 1px solid var(--third-grey);
+    background-color: var(--color-bg);
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: var(--primary-grey);
+    }
+}
+
+.listing-border{
+    padding: 20px 0 40px;
+    border-bottom: 1px solid var(--third-grey);
+}
+
+.listing-title{
+    label{
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    input{
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        font-size: 1.05rem;
+        background-color: var(--input-background);
+        color: var(--color-text);
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--secondary-grey);
+
+        &:focus{
+            background-color: var(--color-bg);
+        }
+    }
+
+    span{
+        display: flex;
+        justify-content: end;
+        margin-top: 5px;
+        color: var(--secondary-grey);
+    }
+}
+
+.selector{
+    position: relative;
+    display: inline-block;
+}
+
+.category-btn-listing{
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 5px 15px;
+    border: 1px solid var(--secondary-grey);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn-icon{
+        margin-top: 5px;
+    }
+
+    &:hover{
+        background-color: var(--input-background);
+    }
+}
+
+.condition-radio{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    label{
+        cursor: pointer;
+
+        input{
+            cursor: pointer;
+        }
+
+        span{
+            margin-left: 3px;
+            font-weight: bold;
+        }
+    }
+}
+
+.description-textarea{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 20px;
+    resize: none;
+    height: 250px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.025rem;
+    outline: none;
+    border: 1px solid var(--secondary-grey);
+
+    &:focus{
+        border: 1px solid #000;
+    }
+}
+
+.price-input{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 5px;
+
+    label{
+        width: 70px;
+    }
+
+    input{
+        text-align: end;
+        box-sizing: border-box;
+        width: 150px;
+        height: 40px;
+        font-size: 1.02rem;
+        background-color: var(--input-background);
+        color: var(--color-text);
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--secondary-grey);
+
+        &:focus{
+            background-color: var(--color-bg);
+        }
+
+        &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        appearance: textfield;
+    }
+
+    .price-item{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span{
+            color: var(--color-text);
+            font-size: 1.9rem;
+        }
+    }
+}
+
+.listing-footer{
+    padding: 40px 0 50px;
+
+    h2, p{
+        text-align: center;
+    }
+
+    p{
+        font-size: 0.8rem;
+        color: var(--secondary-grey);
+    }
+
+    label{
+        text-decoration: underline;
+        color: var(--color-primary-style);
+    }
+
+    button{
+        display: block;
+        margin: 30px auto 0; 
+        width: 300px;
+        height: 45px;
+        font-size: 1rem;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        background-color: var(--color-primary);
+        color: var(--color-bg);
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+
+        &:hover{
+            background-color: var(--color-primary-style);
+        }
+
+        &.disabled-btn{
+            background-color: var(--third-grey);
+        }
+    }
+}
+
+.emailContent{
+    color: var(--color-primary);
+}
+
+
+@media(max-width: 700px){
+    .image-uploaded{
+        max-width: 450px;
+    }
+}
+
+@media(max-width: 490px){
+    .image-uploaded{
+        max-width: 100%;
+    }
+
+    .drag-drop{
+        padding: 50px;
+    }
+
+    .drag-header{
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    .upload-image-btn{
+        width: 200px;   
+    }
+
+    .category-btn-listing{
+        width: 100%;
+    }
+
+    .listing-footer{
+        button{
+            width: 250px;
+        }
+    }
+}

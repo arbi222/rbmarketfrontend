@@ -1,0 +1,50 @@
+.input-fields{
+    position: relative;
+    margin: 20px auto;
+    
+    input{
+        box-sizing: border-box;
+        width: 95%;
+        padding: 14px 10px;
+        font-size: 16px;
+        border: 1px solid var(--third-grey);
+        border-radius: 8px;
+        outline: none;
+        background: none;
+
+        &#password{
+            padding-right: 45px;
+        }
+    }
+
+    label{
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: #777;
+        font-size: 16px;
+        transition: 0.2s ease all;
+        pointer-events: none;
+        background: var(--color-bg);
+        padding: 0 4px;
+    }
+
+    button{
+        position: absolute;
+        top: 11px;
+        right: 15px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+.input-fields input:focus + label, 
+.input-fields input:not(:placeholder-shown) + label
+ {
+  top: 0px;
+  left: 20px;
+  font-size: 12px;
+  color: #333;
+}

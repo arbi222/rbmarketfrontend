@@ -1,0 +1,51 @@
+.login-p-tag{
+    color: var(--color-text);
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+
+    button{
+        color: var(--color-text);
+        border: none;
+        text-decoration: underline;
+        background-color: transparent;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+
+.login-form-container{
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.banned-account-message{
+    text-align: center;
+    margin-top: 45px;
+
+    p{
+        color: var(--color-text);
+        font-size: large;
+
+        span{
+            color: var(--color-primary);
+        }
+
+        a{
+            display: block;
+            text-decoration: none;
+            color: var(--color-primary);
+        }
+
+        &.support-email{
+            word-break: break-all;
+        }
+    }
+}
+
+@media (max-width: 490px){
+    .login-form-container{
+        width: 320px;
+    }
+}

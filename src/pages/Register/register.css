@@ -1,0 +1,44 @@
+.register-p-tag{
+    color: var(--color-text);
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+
+    button{
+        color: var(--color-text);
+        border: none;
+        text-decoration: underline;
+        background-color: transparent;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+
+.register-form-container{
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.register-username{
+    margin-top: -25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .input-fields{
+        input {
+            width: 90%;
+        }
+    }
+}
+
+.register-other-fields{
+    margin-top: -20px;
+}
+
+@media (max-width: 490px){
+    .register-form-container{
+        width: 320px;
+    }
+}

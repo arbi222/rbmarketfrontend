@@ -1,0 +1,24 @@
+.extra-content-container{
+    p{
+        margin: 0 0 10px;
+        color: var(--secondary-grey);
+        font-size: 15px;
+    }
+}
+
+.pass-change-mismatch{
+    text-align: left;
+    
+    p{  
+        margin-top: 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px){
+    .extra-content-container{
+        p{
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.filter-container{
+    width: 170px;
+}
+
+.orders{
+    text-align: center;
+}
+
+.admin{
+    width: 100px;
+}
+
+.filter-label{
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.admin-label{
+    font-weight: bold;
+    font-size: large;
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+.filter-wrapper{
+    position: relative;
+}
+
+.filter-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 170px;
+    border-radius: 15px;
+    border: 1px solid var(--secondary-grey);
+    padding: 3px 10px;
+    cursor: pointer;
+    color: var(--color-text);
+    background-color: var(--primary-grey);  
+}
+
+.admin-filter-btn{
+    width: 100px;
+}
+
+.selectedItemColor{
+    color: var(--color-primary);
+}
+
+.filter-options{
+    position: absolute;
+    z-index: 2;
+    width: 170px;
+    margin-top: 2px;
+    background-color: var(--color-bg);
+    box-shadow: var(--popUpShadow);
+    border-radius: 15px;
+}
+
+.admin-filter{
+    width: 100px;
+}
+
+.filter-option-btn{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: none;
+
+    &:hover{
+        background-color: var(--primary-grey);
+    }
+}
+
+.first-option-btn{
+    color: var(--color-text);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.last-option-btn{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.filter-loader{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+@media (max-width: 765px){
+    .profileFilter{
+        width: 120px;
+
+        .filter-btn{
+            width: 120px;
+        }
+
+        .filter-options{
+            z-index: 4;
+            width: 120px;
+        }
+    }
+}
+
+@media (max-width: 670px){
+    .filter-container{
+        width: 120px;
+    }
+
+    .filter-btn{
+        width: 120px;
+    }
+
+    .filter-options{
+        z-index: 4;
+        width: 120px;
+    }
+}
+
+@media (max-width: 650px){
+    .admin-label{
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+}

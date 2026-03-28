@@ -1,0 +1,30 @@
+.dataCard{
+    background-color: var(--primary-grey);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 20px;
+    height: 100px;
+    position: relative;
+
+    h2{
+        color: var(--secondary-grey);
+    }
+}
+
+.btn-and-menu{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.edit-dataCard-btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 2px 5px;
+
+    &:hover{
+        background-color: var(--third-grey);
+    }
+}

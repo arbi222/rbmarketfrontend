@@ -1,0 +1,223 @@
+.popup-backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.general-popup{
+    position: relative;
+    background-color: var(--color-bg);
+    width: 500px;
+    height: 450px;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--popUpShadow);
+    z-index: 1001;
+}
+
+.adding-to-cart, .buy-item, .YesNo, .emailVerify, .emailVerifyLinkSent, .setPassword, .DeleteAccountLoading, .setStatus, .BannedAccount{
+    width: 450px;
+    height: auto;
+}
+
+.cart, .notifications{
+    height: auto;
+    max-height: 470px;
+}
+
+.TFA{
+    width: 350px;
+    height: 185px;
+}
+
+.add-funds{
+    width: 400px;
+    height: auto;
+}
+
+.payment, .withdraw{
+    height: auto;
+    min-height: 350px;
+}
+
+.loading-addingToCart, .loading-buy-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 45px;
+    color: var(--color-text);
+}
+
+.close-popup-btn{
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    padding: 4px 5px 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    color: var(--color-text);
+    background-color: var(--primary-grey);
+    z-index: 999;
+}
+
+.popup-header{
+    color: var(--color-text);
+    margin: 0;
+
+    span{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 22px;
+        font-weight: bold;
+
+        .done-icon{
+            color: green;
+        }
+    }
+}
+
+.TFA-header, .emailVerify-header, .setPassword-header, .setStatus-header, .BannedAccount-header{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.popup-p-payment{
+    color: var(--secondary-grey);
+    font-size: 15px;
+}
+
+.TFA-content, .emailVerify-content, .emailVerifyLinkSent-content, .setPassword-content, .setStatus-content{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.payment-content, .withdraw-content{
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.withdraw-amount-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .withdraw-amount-input, .withdraw-email{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    label{
+        color: var(--color-text);
+        font-size: large;
+    }
+
+    input{
+        height: 30px;
+        width: 100px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 7px;
+        border: none;
+        outline: 1px solid #000;
+        padding-left: 5px;
+
+        &:focus{
+            outline: 1px solid var(--color-primary);
+        }
+    }
+    
+    .withdraw-email{
+        input{
+            width: 70%;
+        }
+    }
+}
+
+.payment-bottom-part, .withdraw-bottom-part{
+    position: absolute;
+    bottom: 1.5rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-secure-p, .withdraw-secure-p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+}
+
+.pop-up-btns{
+    width: 250px;
+
+    .save-settings{
+        &.disabled-btn{
+            background-color: var(--third-grey);
+            border: 1px solid var(--third-grey);
+
+            &:hover{
+                background-color: var(--third-grey);
+            }
+        }
+    }
+}
+
+.adding-to-cart-btns, .buy-item-btns{
+    width: 100%;
+    flex-direction: column-reverse;
+    gap: 15px;
+
+    button{
+        padding: 10px;
+
+        &:active{
+            animation: none;
+        }
+    }
+}
+
+.cart-btns, .setPassword-btns, .setStatus-btns{
+    width: 100%;
+    margin-top: 5px;
+
+    button{
+        padding: 10px;
+
+        &:active{
+            animation: none;
+        }
+    }
+}
+
+.TFA-btns, .emailVerify-btns{
+    margin: 30px auto 0;
+    width: 300px;
+}
+
+@media (max-width: 650px){
+    .general-popup{
+        width: 80%;
+    }
+
+    .TFA, .emailVerify, .add-funds{
+        width: 65%;
+    }
+
+    .emailVerify-btns{
+        width: 70%;
+        flex-direction: column;
+    }
+}

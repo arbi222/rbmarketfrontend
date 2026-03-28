@@ -1,0 +1,114 @@
+.search-panel {
+    display: flex;
+    align-items: center;
+    width: 97%;
+    margin-left: 1px;
+    border: 2px solid var(--third-grey);
+    border-radius: 20px;
+    height: 40px;
+    position: relative;
+    background-color: var(--color-bg);
+    z-index: 4;
+
+    &:focus-within{
+        border-color: #000;
+
+        label{
+            color: #000;
+        }
+
+        input{
+            &:focus::placeholder {
+               opacity: 0;
+               transition: opacity 0.2s ease-out 0s;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        font-size: 1rem;
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+        background: transparent;
+
+        &::placeholder {
+            opacity: 1;
+            transition: opacity 0.2s ease-in 0.4s;
+        }
+    }
+   
+    label {
+        position: absolute;
+        top: 50%;
+        left: 14px;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: gray;
+        pointer-events: none;
+    }
+
+    .delete-search-bar-btn{
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-bar-btn{
+        cursor: pointer;
+        border: none;
+        border-left: 2px solid var(--third-grey);
+        border-top-right-radius: 17px;
+        border-bottom-right-radius: 17px;
+        width: 4rem;
+        height: 100%;
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        transition: background-color 0.4s ease;
+        animation: none;
+
+        &:hover{
+            background-color: var(--primary-grey);
+        }
+    }
+}
+
+.shop-width{
+    width: 350px;
+    z-index: 2;
+}
+
+.profile-width{
+    width: 30%;
+    z-index: 2; 
+}
+
+.admin-width{
+    width: 70%;
+    z-index: 2; 
+}
+
+@media (max-width: 670px){
+    .profile-width{
+        width: 60%; 
+    }
+
+    .shop-width{
+        width: 75%;
+    }
+}

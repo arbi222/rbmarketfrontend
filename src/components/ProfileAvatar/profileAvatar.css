@@ -1,0 +1,231 @@
+.profileAvatar-container{
+    background-color: var(--primary-grey-style);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cover{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1100px;
+}
+
+.cover-left-part{
+    margin-left: 50px;
+}
+
+.cover-details{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-upload-btn{
+    position: absolute;
+    right: 2px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+    padding: 4px;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: var(--color-primary-style);
+    }
+}
+
+.profile-btn-pop-up{
+    position: absolute;
+    top: 45px;
+    left: 85px;
+    border-radius: 10px;
+    box-shadow: var(--popUpShadow);
+    
+    button{
+        display: block;
+        width: 8rem;
+        height: 2.3rem;
+        text-align: left;
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+        background-color: var(--color-bg);
+
+        &:hover{
+            background-color: var(--primary-grey);
+        }
+    }
+
+    .add-photo{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .remove-photo{
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.cover-profile-img{
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    padding: 3px;
+    border: 1px solid var(--color-primary);
+}
+
+.cover-details-inside a{
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.cover-details-inside h1{
+    margin-bottom: 0;
+}
+
+.cover-visit-settings{
+    line-height: 1.5rem;
+}
+
+.cover-settings-btn{
+    color: var(--color-text);
+    transition: color 0.3s ease;
+    text-decoration: underline !important;
+
+    &:hover{
+        color: var(--secondary-grey);
+    }
+}
+
+.cover-right-part{
+    align-self: flex-end;
+}
+
+.cover-right-btns{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cover-btn{
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 17px;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.c-cancel-btn{
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+
+    &:hover{
+        background-color: transparent;
+        color: var(--color-primary-style);
+        border: 1px solid var(--color-primary-style);
+    }
+}
+
+.c-save-btn{
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    border: 1px solid var(--color-primary);
+
+    &:hover{
+        background-color: var(--color-primary-style);
+    }
+}
+
+.cover-btn-loader{
+    margin-bottom: -5px;
+    color: var(--color-bg) !important;
+}
+
+.cover-edit-profile-btn{
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    &:hover{
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    &:active{
+        animation: none;
+    }
+}
+
+@media (max-width: 670px) {
+    .cover{
+        flex-direction: column;
+    }
+
+    .cover-left-part{
+        margin-left: 0;
+    }
+
+    .cover-details{
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .cover-details-inside h1{
+        margin-top: 10px;
+    }
+
+    .cover-visit-settings{
+        text-align: center;
+    }
+
+    .cover-right-part{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .cover-right-btns{
+        justify-content: center;
+    }
+
+    .cover-edit-profile-btn{
+        display: block;
+        width: 100%;
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        border-radius: 20px;
+        padding: 10px 20px;
+        background-color: transparent;
+        
+        &:hover{
+            border: 1px solid var(--color-primary-style);
+            color: var(--color-primary-style);
+            text-decoration: none;
+        }
+    }
+
+    .edit-cover-btn-icon{
+        display: none !important;
+    }
+}

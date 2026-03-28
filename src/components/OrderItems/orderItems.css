@@ -1,0 +1,170 @@
+.orderContainer{
+    border: 2px solid var(--primary-grey);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    hr{
+        border-style: solid none none;
+        border-color: var(--third-grey);
+        margin: 10px 0 15px;
+    }
+}
+
+.order-status-time{
+    display: flex;
+    justify-content: space-between;
+
+    h4{
+        margin: 0;
+        color: var(--color-text);
+
+        span{
+            &.pending-status{
+                color: var(--color-accent);
+            }
+
+            &.paid-status{
+                color: var(--color-primary);
+            }
+
+            &.failed-status{
+                color: red;
+            }
+
+            &.cancelled-status{
+                color: var(--secondary-grey);
+            }
+
+            &.expired-status{
+                color: rgb(141, 41, 161);
+            }
+
+            &.delivered-status{
+                color: green;
+            }
+        }
+    }
+}
+
+.order-details-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-items-images{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .image-quantity-detail{
+        position: relative;
+
+        .order-product-img{
+            width: 100px;
+            height: 100px;
+            border-radius: 7px;
+        }
+
+        .order-product-quantity{
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border: 3px solid var(--color-bg);
+            padding: 1px 5px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    }
+}
+
+.order-amount{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .order-btns{
+        display: flex;
+        flex-direction: column;
+
+        .delete-order-btn{
+            background-color: transparent;
+            border: none;
+            color: rgb(211, 26, 26);
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+    
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    
+        a{
+            text-decoration: none;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid;
+            border-image: linear-gradient(to right, var(--color-primary), var(--color-accent)) 1;
+        }
+    }
+
+
+    h4{
+        margin: 0;
+        color: var(--color-text);
+    }
+
+    span{
+        color: var(--color-primary);
+    }
+}
+
+@media (max-width: 834px){
+    .order-details-wrapper{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .order-items-images{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .order-amount{
+        align-self: normal;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        .order-btns{
+            flex-direction: column-reverse;
+            align-items: center;
+
+            a{
+                padding: 5px 10px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .order-items-images{
+        flex-wrap: wrap;
+    }
+}

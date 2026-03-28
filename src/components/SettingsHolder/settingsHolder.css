@@ -1,0 +1,41 @@
+.setting-holder-header{
+    margin: 5px 0 20px;
+}
+
+.settings-hr{
+    border-style: solid none none;
+    border-top: 1px solid var(--third-grey);
+}
+
+.setting-label-info{
+    margin: 5px 0;
+    line-height: 1.3rem;
+
+    label{
+        color: var(--secondary-grey);
+        font-size: 15px;
+    }
+
+    p{
+        color: var(--color-text);
+        margin: 10px 0 5px;
+    }
+
+    span{
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 776px){
+    .setting-holder-header{
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px){
+    .setting-holder-header{
+        text-align: center;
+    }
+}
