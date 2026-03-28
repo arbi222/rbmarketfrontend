@@ -236,7 +236,7 @@ const Navbar = ({usage}) => {
 
       const handleNotification = (data) => {
         dispatch(addRealTimeNotification(data));
-        const audio = new Audio("/public/assets/notification.wav");
+        const audio = new Audio("/assets/notification.wav");
         audio.play();
       }
       socket.on("notification", handleNotification)
