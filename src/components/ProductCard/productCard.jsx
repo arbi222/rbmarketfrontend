@@ -13,15 +13,20 @@ const ProductCard = () => {
       return categories?.filter((category) => category.name !== "Others") || []
     },
     [categories]);
-
-    const [selectedCategory, setSelectedCategory] = useState(
-      filteredCategories[0] || { _id: "", name: "", description: "", image: "#" }
-    );
-
+    
     const [currentIndex, setCurrentIndex] = useState(0);
     const [fade, setFade] = useState(true);
     const [hideSideBtns, setHide] = useState(true);
     const intervalRef = useRef(null);
+    
+    const selectedCategory = filteredCategories[currentIndex] || { _id: "", name: "", description: "", image: "#" }
+
+    useEffect(() => {
+      filteredCategories.forEach((cat) => {
+        const img = new Image();
+        img.src = cat.image;
+      });
+    }, [filteredCategories])
 
     useEffect(() => {
       startCarousel();
@@ -31,12 +36,9 @@ const ProductCard = () => {
     const startCarousel = () => {
       stopCarousel();
       setHide(true);
+      
       intervalRef.current = setInterval(() => {
-        setFade(false);
-        setTimeout(() => {
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredCategories?.length);
-          setFade(true);
-        }, 500);
+        changeSlide((prev) => (prev + 1) % filteredCategories.length);
       }, 5000);
     };
 
@@ -48,42 +50,26 @@ const ProductCard = () => {
       setHide(false);
     };
 
+    const changeSlide = (newIndexFn) => {
+      setFade(false);
+      setCurrentIndex(newIndexFn);
+      setTimeout(() => {
+        setFade(true);
+      }, 500);
+    }
+
     const nextSlide = () => {
-        setFade(false);
-        setTimeout(() => {
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredCategories?.length);
-          setFade(true);
-        }, 500);
+      changeSlide((prev) => (prev + 1) % filteredCategories.length);
     };
 
     const prevSlide = () => {
-        setFade(false);
-        setTimeout(() => {
-          setCurrentIndex((prevIndex) => (prevIndex - 1 + filteredCategories?.length) % filteredCategories?.length);
-          setFade(true);
-        }, 500);
+      changeSlide((prev) => (prev - 1 + filteredCategories.length) % filteredCategories.length);
     };
 
     const goToSlide = (index) => {
-        setFade(false);
-        setTimeout(() => {
-          setCurrentIndex(index);
-          setFade(true);
-        }, 500);
+      changeSlide(() => index);
     };
-
-    useEffect(() => {
-      if (filteredCategories?.length !== 0){
-        setSelectedCategory({
-          _id: filteredCategories[currentIndex]._id,
-          name: filteredCategories[currentIndex].name,
-          description: filteredCategories[currentIndex].description,
-          image: filteredCategories[currentIndex].image
-        })
-      }
-    }, [filteredCategories, currentIndex])
     
-
   return (
     <div className='product-card' onMouseEnter={stopCarousel} onMouseLeave={startCarousel}>
         <div className={`product-card-fade ${fade ? "fade-in" : "fade-out"}`}>
