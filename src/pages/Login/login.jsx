@@ -73,6 +73,8 @@ const Login = () => {
           scrollTo: location.state?.scrollTo || "",
           cartPopUp: location.state?.cartPopUp || false,
           notificationPopUp: location.state?.notificationPopUp || false,
+          cartPopUpPhone: location.state?.cartPopUpPhone || false,
+          notificationPopUpPhone: location.state?.notificationPopUpPhone || false,
         };
         
         sessionStorage.setItem(

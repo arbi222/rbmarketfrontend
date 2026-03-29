@@ -54,12 +54,21 @@ const HoverMenu = ({menu, items, onClickItem, onDeleteItem, onRead, onReadAll, u
         })
     }
 
-    const handleSignInNotifications = () => {
-        navigate("/sign-in", {
-            state: {
-                notificationPopUp: "open"
-            }
-        })
+    const handleSignInNotifications = (wideScreen, mobile) => {
+        if (wideScreen){
+            navigate("/sign-in", {
+                state: {
+                    notificationPopUp: "open"
+                }
+            })
+        }
+        if (mobile){
+            navigate("/sign-in", {
+                state: {
+                    notificationPopUpPhone: "open"
+                }
+            })
+        }
     }
     
     const goToCheckoutPage = () => {
@@ -133,7 +142,8 @@ const HoverMenu = ({menu, items, onClickItem, onDeleteItem, onRead, onReadAll, u
             {(isNotificationBar || isAccount) && !isAuthenticated ? (
                 <div className={`${menu}-empty-state`}>
                     {isNotificationBar 
-                     ?  <p>Please <button className='empty-state-login' onClick={handleSignInNotifications}>sign in</button> to view your notifications.</p>
+                     ?  <p>Please <button className='empty-state-login' 
+                            onClick={() => handleSignInNotifications(isNotifications, isNotificationsPopUp)}>sign in</button> to view your notifications.</p>
                      :  
                      <div className='login-message'>
                         <Link className='btn sign-in' to="/sign-in">Sign in</Link>

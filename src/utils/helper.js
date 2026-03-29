@@ -104,12 +104,14 @@ export const redirectAfterLogin = (navigate, location) => {
     from = "/",
     scrollTo = "",
     cartPopUp = false,
-    notificationPopUp = false
+    notificationPopUp = false,
+    cartPopUpPhone = false,
+    notificationPopUpPhone = false
   } = location.state || {};
   
     navigate(from, {
         replace: true,
-        state: {scrollTo, cartPopUp, notificationPopUp}
+        state: {scrollTo, cartPopUp, notificationPopUp, cartPopUpPhone, notificationPopUpPhone}
     });
 }
 

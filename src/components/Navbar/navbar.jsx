@@ -95,9 +95,19 @@ const Navbar = ({usage}) => {
             cart.setIsOpen(true);
           }, 300);
       }
+      else if (location.state?.cartPopUpPhone === "open"){
+        setTimeout(() => {  
+          dispatch(openGeneralPopUp("cart"));
+        }, 300);
+      }
       else if (location.state?.notificationPopUp === "open"){
         setTimeout(() => {  
-            notifications.setIsOpen(true);
+          notifications.setIsOpen(true);
+        }, 300);
+      }
+      else if (location.state?.notificationPopUpPhone === "open"){
+        setTimeout(() => {  
+          dispatch(openGeneralPopUp("notifications"));
         }, 300);
       }
     }, [])
@@ -352,7 +362,15 @@ const Navbar = ({usage}) => {
           dispatch(openGeneralPopUp("add-funds"));
           dispatch(setinsufficientValue(insufficientValue));
       }  
-    } 
+    }
+    
+    const handleSignInCart = () => {
+        navigate("/sign-in", {
+            state: {
+              cartPopUpPhone: "open"
+            }
+        })
+    }
 
   return (
     <nav className={`${isHome ? 'navbar' : ''}`}>
@@ -515,7 +533,9 @@ const Navbar = ({usage}) => {
                                     <>
                                       {!isAuthenticated &&
                                         <div className='logged-out-cart'>
-                                            <p>You're signed out right now. To save these items or see your previously saved items, <Link to="/sign-in">Sign in</Link>.</p>
+                                            <p>You're signed out right now. To save these items or see your previously saved items, 
+                                              <button onClick={handleSignInCart}>Sign in</button>.
+                                            </p>
                                         </div>
                                       }
                                       <div className='cart-total-price-popup'>

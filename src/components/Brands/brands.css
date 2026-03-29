@@ -85,7 +85,13 @@
 }
 
 @media (max-width: 480px) {
-  .brands-photos {
-    grid-template-columns: 1fr; 
-  }
+    .brand-item-img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .brand-image{
+        width: 90px;
+        height: 90px;
+    }
 }
