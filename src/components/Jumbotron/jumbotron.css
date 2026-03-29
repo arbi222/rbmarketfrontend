@@ -95,6 +95,7 @@
     flex: 1 1 100%;
     margin: 0;
     text-align: center;
+    padding-left: 20px;
   }
 
   .j-left-part-auth{
@@ -102,16 +103,6 @@
 
     p{
       margin-bottom: 20px;
-    }
-  }
-
-  .j-left-part{
-    padding-left: 20px;
-  }
-
-  .j-right-part{
-    p{
-      max-width: 380px;
     }
   }
 
@@ -147,6 +138,13 @@
     }
 }
 
+@media (max-width: 480px) {
+  .j-right-part{
+    p{
+      padding: 0 20px;
+    }
+  }
+}
 
 .j-selling{
   width: 100%;
