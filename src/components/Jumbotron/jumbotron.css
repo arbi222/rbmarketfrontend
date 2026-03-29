@@ -105,6 +105,16 @@
     }
   }
 
+  .j-left-part{
+    padding-left: 20px;
+  }
+
+  .j-right-part{
+    p{
+      max-width: 380px;
+    }
+  }
+
   .j-home h1 {
     font-size: 1.5rem; 
   }
@@ -200,6 +210,26 @@
     }
 }
 
+@media (max-width: 550px){
+    .j-selling{
+      h1{
+        font-size: 1.3rem;
+      }
+    
+      .j-paragraphs{
+        div{
+          h2{
+            font-size: 1.2rem;
+          }
+
+          p{
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+}
+
 .j-howtosell{
   width: 100%;
   box-sizing: border-box;
@@ -230,10 +260,26 @@
       letter-spacing: 1px;
 
       h2{
-          color: brown;
+        color: brown;
       }
     }
   }
+}
+
+@media (max-width: 550px){
+    .j-howtosell{
+      h1{
+        font-size: 1.45rem;
+      }
+    
+      .j-paragraph{
+        div{
+          h2{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
 }
 
 @media (max-width: 650px){

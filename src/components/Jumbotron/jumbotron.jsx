@@ -13,7 +13,7 @@ const Jumbotron = ({usage, learnSelling}) => {
     if (isHome){
       return (
         <div className={`jumbotron j-${usage}`}>
-            <div className={`${isAuthenticated ? "j-left-part" : "j-left-part-auth"}`}>
+            <div className={`${isAuthenticated ? "j-left-part-auth" : "j-left-part"}`}>
               <div>
                   <h1>Shopping made easy</h1>
                   <p>Shop with confidence – fast delivery and secure checkout.</p>

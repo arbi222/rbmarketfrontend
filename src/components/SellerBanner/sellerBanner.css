@@ -158,6 +158,33 @@
     }
 }
 
+@media (max-width: 550px){
+    .seller-headline{
+        h1{
+            font-size: 1.25rem;
+            max-width: 240px;
+        }
+
+        p{
+            font-size: 0.9rem;
+            max-width: 240px;
+            margin-bottom: 20px;
+        }
+
+        a{
+            padding: 7px 15px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .ending-header{
+        h1{
+           max-width: 350px;
+           margin-bottom: 15px;
+        }
+    }
+}
+
 @media (min-width: 1544px) {
   .seller-banner-wrapper{
     img{
