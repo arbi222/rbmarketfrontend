@@ -52,8 +52,8 @@ const ProductCard = () => {
 
     const changeSlide = (newIndexFn) => {
       setFade(false);
-      setCurrentIndex(newIndexFn);
       setTimeout(() => {
+        setCurrentIndex(newIndexFn);
         setFade(true);
       }, 500);
     }
