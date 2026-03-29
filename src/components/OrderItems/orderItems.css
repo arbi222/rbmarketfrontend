@@ -163,7 +163,7 @@
     }
 }
 
-@media (max-width: 400px){
+@media (max-width: 600px){
     .order-items-images{
         flex-wrap: wrap;
     }
