@@ -25,7 +25,7 @@ const AddingFunds = ({popUp, from}) => {
 
     return (
         <div>
-            <h2 className="funds-header">
+            <h2 className={`funds-header ${popUp ? "funds-header-popup" : ""}`}>
                 {userInfo.isAdmin ? "Revenue:" : "Balance:"} <span>{(userInfo.walletBalance / 100).toFixed(2)}$</span>
             </h2>
             {!userInfo.isAdmin &&

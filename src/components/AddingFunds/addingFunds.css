@@ -59,6 +59,14 @@
 }
 
 @media (max-width: 776px){
+    .funds-header{
+        text-align: center;
+    }
+
+    .funds-header-popup{
+        text-align: start;
+    }
+
     .adding-funds-container{
         margin: 0 auto 25px;
     }
