@@ -225,3 +225,9 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 500px){
+    .TFA-header, .emailVerify-header, .setPassword-header, .setStatus-header, .BannedAccount-header{
+        font-size: 1.2rem;
+    }
+}

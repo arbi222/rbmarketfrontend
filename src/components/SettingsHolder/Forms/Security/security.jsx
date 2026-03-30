@@ -201,7 +201,10 @@ const Security = () => {
             toast.error("Selected Google account is already in use by another account on RB Market.");
         }
         else if (errorCode === "LINK_EMAIL_MISMATCH"){
-            toast.error("Selected Google account email is different from the email of your account.");
+            toast.error("Selected Google account's email is different from the email of your account.");
+        }
+        else if (errorCode === "CANCELLED"){
+            toast.warn("You have cancelled authentication with Google.");
         }
         
         window.history.replaceState({}, document.title, window.location.pathname);

@@ -38,6 +38,8 @@ const Login = () => {
         }
     }, [requires2FA]);
 
+    console.log(generalPopUp)
+
     useEffect(() => {
         if (statusReason) {
             dispatch(openGeneralPopUp("BannedAccount"));
@@ -106,8 +108,14 @@ const Login = () => {
         const accountDeleted = params.get("accountDeleted");
         const authFailed = params.get("authFailed");
         const loginBlocked = params.get("loginBlocked");
+        const cancelled = params.get("cancelled")
         const message = params.get("message");
         const reason = params.get("reason");
+
+        if (cancelled === "true"){
+            toast.warn("You have cancelled authentication with google.");
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
 
         if (accountDeleted === "true"){
             toast.success("Account has been deleted.");
