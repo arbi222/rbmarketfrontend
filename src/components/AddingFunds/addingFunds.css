@@ -59,10 +59,6 @@
 }
 
 @media (max-width: 776px){
-    .funds-header{
-        text-align: center;
-    }
-
     .adding-funds-container{
         margin: 0 auto 25px;
     }
@@ -72,5 +68,10 @@
     .adding-funds-container{
         margin: 0 auto 25px;
         width: 90%;
+    }
+
+    .not-enough-funds{
+        width: 90%;
+        margin: 0 auto 20px;
     }
 }   

@@ -332,7 +332,7 @@
     color: var(--color-text);
     background-color: transparent;
     text-decoration: none;
-    width: 250px;
+    width: 235px;
 
     &:hover{
         background-color: var(--primary-grey);
@@ -340,6 +340,12 @@
 
     &:active{
         animation: none;
+    }
+}
+
+@media (max-width: 420px){
+    .notifications-popup-item{
+        width: 220px;
     }
 }
 

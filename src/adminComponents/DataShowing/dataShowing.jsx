@@ -336,7 +336,7 @@ const DataShowing = ({usage, items, searchValue, setSearchValue, handleClearSear
             }
             {!isReviews && !isOrders && !isTransactions && <h3 className="image-header admin-headers">IMAGE</h3>}
             {(isUsers || isProducts) && 
-                <div className="name-header admin-headers filtering" style={{marginRight: "10px"}}>
+                <div className={`name-header admin-headers filtering ${searchFilter ? "filter-header" : ""}`} style={{marginRight: "10px"}}>
                     {searchFilter ? 
                     <SearchBar usage="admin"
                         value={searchValue} 
@@ -370,10 +370,10 @@ const DataShowing = ({usage, items, searchValue, setSearchValue, handleClearSear
                     }
                 </h3>
             }
-            {isUsers && <h3 className="email-header admin-headers">EMAIL</h3>}
+            {isUsers && (!searchFilter && <h3 className="email-header admin-headers">EMAIL</h3>)}
             {isProducts && 
                 <>
-                    <h3 className="price-header admin-headers" style={{marginLeft: "-20px", marginRight: "10px"}}>PRICE</h3>
+                    {!searchFilter && <h3 className="price-header admin-headers" style={{marginLeft: "-20px", marginRight: "10px"}}>PRICE</h3>}
                     <h3 className="price-header admin-headers stock-header-admin" style={{marginRight: "10px"}}>STOCK</h3>
                 </>
             }

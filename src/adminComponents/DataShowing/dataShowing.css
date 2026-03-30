@@ -26,6 +26,10 @@
     flex: 1;
 }
 
+.filter-header{
+    flex: 2;
+}
+
 .transaction-header{
     flex: 0.5;
 }

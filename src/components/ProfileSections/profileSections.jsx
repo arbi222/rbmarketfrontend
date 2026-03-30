@@ -139,12 +139,11 @@ const ProfileSections = () => {
       <div className="profile-sections-container">
         <div className="profile-sections-top">
             <div className="profile-sections-btns">
-                 
-                    <button className={`btn profile-section-btn ${activeTab === "shop" ? "active" : ""}`}
-                            onClick={() => handleTabChange("shop")}
-                    >
-                        <span>Shop</span>
-                    </button>
+                <button className={`btn profile-section-btn ${activeTab === "shop" ? "active" : ""}`}
+                        onClick={() => handleTabChange("shop")}
+                >
+                    <span>Shop</span>
+                </button>
                 
                 <button className={`btn profile-section-btn ${activeTab === "about" ? "active" : ""}`}
                         onClick={() => handleTabChange("about")}

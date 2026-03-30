@@ -23,14 +23,14 @@ const About = () => {
           <h2 className="about-header">About</h2>
 
           {!editProfile && 
-            <>
+            <div className="description-container">
               <p className="description">{seeMoreBtn ? user.aboutBio.slice(0, 200) + " ..." : user.aboutBio}</p>
               {user.aboutBio.length > 200 &&
                 <button className="see-more-less-btn" onClick={() => setSeeMoreBtn(!seeMoreBtn)}>
                     {seeMoreBtn ? "See more" : "See less"}
                 </button>
               }
-            </>
+            </div>
           }
 
           {editProfile &&

@@ -68,19 +68,10 @@
     }
 }
 
-@media (max-width: 960px){
+@media (max-width: 850px){
     .cart-page-wrapper{
+        flex-direction: column;
         gap: 10px;
-    }
-
-    .cart-left{
-        flex: 1;
-    }
-}
-
-@media (max-width: 600px){
-    .cart-page-wrapper{
-        flex-direction: column-reverse;
     }
 
     .cart-right{

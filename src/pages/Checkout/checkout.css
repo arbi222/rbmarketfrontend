@@ -47,30 +47,10 @@
     height: 100%;
 }
 
-@media (max-width: 960px){
-    .cart-items-checkout{
-        gap: 10px;
-    }
-
-    .checkout-left{
-        flex: 1;
-    }
-
-    .payment-part{
-        h2{
-            text-align: center;
-        }
-    }
-
-    .choose-payment{
-        display: flex;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 600px){
+@media (max-width: 850px){
     .cart-items-checkout{
         flex-direction: column;
+        gap: 10px;
     }
 
     .checkout-right{

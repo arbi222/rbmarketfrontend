@@ -32,6 +32,10 @@
     max-height: 500px;
 }
 
+.notifications{
+    max-width: 350px;
+}
+
 .TFA{
     width: 350px;
     height: 185px;

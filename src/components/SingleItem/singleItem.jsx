@@ -35,6 +35,15 @@ const SingleItem = ({onReadMore}) => {
     }, [error])
 
     const addToCartHandle = async () => {
+        if (Number(quantityValue) === 0){
+            toast.warn("Quantity must be greater than 1!");
+            return;
+        };
+        if (Number(quantityValue) > product.stock){
+            toast.warn("Quantity must be lower or equal to the items available!");
+            return;
+        }
+
         if (isAuthenticated){
             try{
                 await dispatch(addToCartCall({productId: product._id, quantity: Number(quantityValue)})).unwrap();
@@ -53,11 +62,18 @@ const SingleItem = ({onReadMore}) => {
     }
 
     const buyItNow = async () => {
-        if (quantityValue === 0) return;
+        if (Number(quantityValue) === 0){
+            toast.warn("Quantity must be greater than 1!");
+            return;
+        };
+        if (Number(quantityValue) > product.stock){
+            toast.warn("Quantity must be lower or equal to the items available!");
+            return;
+        }
         if (isAuthenticated) {
-            const valueToPay = parseFloat((product.price * quantityValue).toFixed(2));
+            const valueToPay = parseFloat((product.price * Number(quantityValue)).toFixed(2));
             if (userInfo.walletBalance >= valueToPay){
-                navigate(`/checkout?itemSlug=${product.slug}&quantity=${quantityValue}`);
+                navigate(`/checkout?itemSlug=${product.slug}&quantity=${Number(quantityValue)}`);
             }
             else{
                 const insufficientValue = parseFloat((valueToPay - userInfo.walletBalance).toFixed(2));

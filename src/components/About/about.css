@@ -62,11 +62,10 @@
         display: none;
     }
 
-    .description{
-        margin-top: 2rem;
-        text-align: center;
+    .description-container{
+       margin: 20px auto 50px;
     }
-
+    
     .textarea-div{
         margin-top: 2rem;
     }

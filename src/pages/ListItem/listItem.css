@@ -319,7 +319,7 @@
     }
 
     .category-btn-listing{
-        width: 100%;
+        max-width: 250px;
     }
 
     .listing-footer{
