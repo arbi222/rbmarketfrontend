@@ -55,7 +55,7 @@ const ProductCard = () => {
       setTimeout(() => {
         setCurrentIndex(newIndexFn);
         setFade(true);
-      }, 500);
+      }, 700);
     }
 
     const nextSlide = () => {
