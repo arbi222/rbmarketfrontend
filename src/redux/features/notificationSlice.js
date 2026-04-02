@@ -117,6 +117,13 @@ const notificationSlice = createSlice({
         addRealTimeNotification: (state, action) => {
             state.notifications.unshift(action.payload);
             state.unreadCount += 1;
+        },
+        resetValues: (state) => {
+            state.notifications = [];
+            state.unreadCount = 0;
+            state.loading = false;
+            state.error = null;
+            state.successMessage = null;
         }
     },
     extraReducers: (builder) => {
@@ -174,5 +181,5 @@ const notificationSlice = createSlice({
     }
 });
 
-export const { resetMessages, addRealTimeNotification } = notificationSlice.actions;
+export const { resetMessages, addRealTimeNotification, resetValues } = notificationSlice.actions;
 export default notificationSlice.reducer;

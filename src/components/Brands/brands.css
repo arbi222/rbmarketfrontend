@@ -35,7 +35,6 @@
         background-color: var(--third-grey);
         transition: background-color 0.3s ease;
     }
-
 }
 
 .brand-item-img{
@@ -49,9 +48,11 @@
 }
 
 .brand-image{
-    width: 140px;
-    height: 140px;
+    width: 137px;
+    height: 137px;
     border-radius: 50%;
+    padding: 5px;
+    background-color: var(--primary-grey);
 }
 
 

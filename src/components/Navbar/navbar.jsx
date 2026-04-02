@@ -26,7 +26,7 @@ import useDebounce from "../../utils/helper";
 import socket from "../../socket";
 import { resetSearch, resetMessages, getAllProducts } from "../../redux/features/productSlice";
 import { removeFromCart, clearGuestCart, clearCart, removeFromCartCall } from "../../redux/features/cartSlice";
-import { addRealTimeNotification, deleteAllNotifications, deleteANotification, getAllNotifications, getUnreadNotifications, readAllNotifications, readANotification } from "../../redux/features/notificationSlice";
+import { addRealTimeNotification, deleteAllNotifications, deleteANotification, getAllNotifications, getUnreadNotifications, readAllNotifications, readANotification, resetValues } from "../../redux/features/notificationSlice";
 
 const Navbar = ({usage}) => {
 
@@ -226,6 +226,7 @@ const Navbar = ({usage}) => {
         
         dispatch(reset2FAState());
         dispatch(closeGeneralPopUp());
+        dispatch(resetValues());
         dispatch(clearGuestCart());
         navigate("/sign-in");
       }
