@@ -250,7 +250,7 @@ const HoverMenu = ({menu, items, onClickItem, onDeleteItem, onRead, onReadAll, u
                                 {isNotificationBar && <span className='notification-timestamp'>{timeAgo(item.createdAt)}</span>}
                             </div>
                             {(isNotificationBar && !item.read) && hoveredIndex === itemId &&
-                                <button className="read-btn" 
+                                <button className={`read-btn ${deletedIndex === itemId ? "hide" : ""}`} 
                                         title='Mark as read' 
                                         onClick={() => onRead(itemId)}>
                                 </button>
