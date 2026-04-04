@@ -3,6 +3,13 @@
     box-sizing: border-box;
     max-width: var(--max-width);
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-page-wrapper{
+    flex: 1;
 }
 
 .order-loading-screen{

@@ -27,7 +27,7 @@ const Brands = () => {
         if (brands.length === 0){
             dispatch(getAllBrands());
         }
-    }, [brands])
+    }, [])
 
     useEffect(() => {
         if (refetch === "true"){

@@ -3,15 +3,6 @@
     border-top: 1px solid var(--third-grey);
 }
 
-.footer-container-profile{
-    margin: 50px auto 0;
-    max-width: 1200px;
-}
-
-.footer-container-settings{
-    margin: 100px auto 0;
-}
-
 .footer-items{
     display: flex;
     justify-content: space-between;

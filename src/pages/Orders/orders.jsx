@@ -139,77 +139,79 @@ const Orders = () => {
 
     return (
       <div className="orders-page">
-        <PageTitle title="Orders | RB Market" />
-        <PayMethodAction from={"/checkout?"} />
-        <Navbar />
+        <div className="orders-page-wrapper">
+            <PageTitle title="Orders | RB Market" />
+            <PayMethodAction from={"/checkout?"} />
+            <Navbar />
 
-        <div className="orders-page-container">
-            <div className="order-header-filter">
-                <h1>My orders ({totalOrders})</h1>
-                {showFilter &&
-                    <Filter label="Filter by status"
-                        filterType="status"
-                        usage={"orders"} 
-                        items={orderStatus}
-                        selectedItem={selectedStatus}
-                        onSelection={handleFilter}
-                    />
-                }
-            </div>
-            
-            {loading && !isFetchingChecked && !loadMoreClicked ? 
-              <div className='orders-loading-screen'>
-                <CircularProgress size={40} thickness={5} />
-              </div>
-              :
-              (orders?.length > 0 ? 
-                <>
-                    <div className="orders-page-wrapper">
-                        <OrderItems items={orders} loading={loading} handleDeleteOrder={handleDeleteOrder}/>
-                        {hasMore && (
-                            <div className="load-more-container">
-                              <button
-                                className={`load-more-btn ${loading ? 'disabled-btn disable-btn' : ""}`}
-                                onClick={() => {
-                                  setLoadMoreClicked(true);
-                                  handleLoadMore();
-                                }}
-                                disabled={loading}
-                              >
-                                {loading && loadMoreClicked ? 
-                                  <span>
-                                    <CircularProgress size={15} style={{marginTop: "3px"}}/>
-                                  </span>
-                                :
-                                  "Show More"
-                                }
-                              </button>
-                            </div>
-                        )}
-
-                        {generalPopUp === "YesNo" &&
-                            <GeneralPopUp usage="YesNo"
-                                        showLastBtns={false} 
-                                        closePopUp={handleCancelDelete}
-                                        content={() => (
-                                          <div className='popup-asking-delete'>
-                                            <h3>Delete order</h3>
-                                            <p>Are you sure you want to delete this order?</p>
-                                            <div className='YesNoBtns'>
-                                                <button disabled={loadingDelete} className={loadingDelete ? "disabled-btn" : ""} onClick={handleCancelDelete}>No</button>
-                                                <button disabled={loadingDelete} className={loadingDelete ? "disabled-btn" : ""} onClick={removeOrder}>Yes</button>
-                                            </div>
-                                          </div>
-                                        )}
-                            />
-                        }
-                    </div>
-                </>
+            <div className="orders-page-container">
+                <div className="order-header-filter">
+                    <h1>My orders ({totalOrders})</h1>
+                    {showFilter &&
+                        <Filter label="Filter by status"
+                            filterType="status"
+                            usage={"orders"} 
+                            items={orderStatus}
+                            selectedItem={selectedStatus}
+                            onSelection={handleFilter}
+                        />
+                    }
+                </div>
+                
+                {loading && !isFetchingChecked && !loadMoreClicked ? 
+                <div className='orders-loading-screen'>
+                    <CircularProgress size={40} thickness={5} />
+                </div>
                 :
-                <div className="no-orders">
-                    <h3>You don't have any orders yet.</h3>
-                </div>)
-            }  
+                (orders?.length > 0 ? 
+                    <>
+                        <div className="orders-page-wrapper">
+                            <OrderItems items={orders} loading={loading} handleDeleteOrder={handleDeleteOrder}/>
+                            {hasMore && (
+                                <div className="load-more-container">
+                                <button
+                                    className={`load-more-btn ${loading ? 'disabled-btn disable-btn' : ""}`}
+                                    onClick={() => {
+                                    setLoadMoreClicked(true);
+                                    handleLoadMore();
+                                    }}
+                                    disabled={loading}
+                                >
+                                    {loading && loadMoreClicked ? 
+                                    <span>
+                                        <CircularProgress size={15} style={{marginTop: "3px"}}/>
+                                    </span>
+                                    :
+                                    "Show More"
+                                    }
+                                </button>
+                                </div>
+                            )}
+
+                            {generalPopUp === "YesNo" &&
+                                <GeneralPopUp usage="YesNo"
+                                            showLastBtns={false} 
+                                            closePopUp={handleCancelDelete}
+                                            content={() => (
+                                            <div className='popup-asking-delete'>
+                                                <h3>Delete order</h3>
+                                                <p>Are you sure you want to delete this order?</p>
+                                                <div className='YesNoBtns'>
+                                                    <button disabled={loadingDelete} className={loadingDelete ? "disabled-btn" : ""} onClick={handleCancelDelete}>No</button>
+                                                    <button disabled={loadingDelete} className={loadingDelete ? "disabled-btn" : ""} onClick={removeOrder}>Yes</button>
+                                                </div>
+                                            </div>
+                                            )}
+                                />
+                            }
+                        </div>
+                    </>
+                    :
+                    <div className="no-orders">
+                        <h3>You don't have any orders yet.</h3>
+                    </div>)
+                }  
+            </div>
         </div>
 
         {!loading &&

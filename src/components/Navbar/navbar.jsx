@@ -21,7 +21,7 @@ import { openGeneralPopUp, closeGeneralPopUp, clearInsufficientValue, setinsuffi
 import { logoutUser, reset2FAState } from "../../redux/features/authSlice";
 import { getAllCategories } from "../../redux/features/categorySlice";
 import { toast } from "react-toastify";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useDebounce from "../../utils/helper";
 import socket from "../../socket";
 import { resetSearch, resetMessages, getAllProducts } from "../../redux/features/productSlice";
@@ -113,10 +113,12 @@ const Navbar = ({usage}) => {
     }, [])
 
     useEffect(() => {
+      if (location.pathname === "/") return;
+
       if (openCategories && categories.length === 0){
         dispatch(getAllCategories());
       }
-    }, [openCategories])
+    }, [openCategories, location.pathname])
 
     useEffect(() => {
         const handleMouseLeave = (e) => {

@@ -155,36 +155,39 @@ const Shopping = () => {
 
     return (
       <div className="shopping-page">
-        <PageTitle title="Shopping | RB Market" />
-        <PayMethodAction from={"/checkout?"} />
-        <Navbar usage="home"/>
+        <div className="shopping-page-wrapper">
+          <PageTitle title="Shopping | RB Market" />
+          <PayMethodAction from={"/checkout?"} />
+          <Navbar usage="home"/>
 
-        <div className="shopping-page-container">
-            <div className="shopping-page-filters">
-              <FilterUsage usage={"shopping"} 
-                          selectedFilters={selectedFilters} 
-                          setSelectedFilters={setSelectedFilters} 
-                          debouncedQuery={debouncedQuery} 
-              />
-            </div>
-            <div className="shopping-page-results">
-              <div className="shopping-page-search-bar">
-                <SearchBar usage="shop"
-                        value={searchValue} 
-                        onChange={(e) => setSearchValue(e.target.value)} 
-                        onClear={handleSearchClear} 
-                        placeholder={`Search all ${totalProducts} ${totalProducts > 1 || totalProducts === 0 ? "items" : "item"}`}
+          <div className="shopping-page-container">
+              <div className="shopping-page-filters">
+                <FilterUsage usage={"shopping"} 
+                            selectedFilters={selectedFilters} 
+                            setSelectedFilters={setSelectedFilters} 
+                            debouncedQuery={debouncedQuery} 
                 />
               </div>
-              <div className="products-list">
-                <ProductList products={products} useLoadMore={true} onLoadMore={handleLoadMore} shoppingPage={true} />
+              <div className="shopping-page-results">
+                <div className="shopping-page-search-bar">
+                  <SearchBar usage="shop"
+                          value={searchValue} 
+                          onChange={(e) => setSearchValue(e.target.value)} 
+                          onClear={handleSearchClear} 
+                          placeholder={`Search all ${totalProducts} ${totalProducts > 1 || totalProducts === 0 ? "items" : "item"}`}
+                  />
+                </div>
+                <div className="products-list">
+                  <ProductList products={products} useLoadMore={true} onLoadMore={handleLoadMore} shoppingPage={true} />
+                </div>
               </div>
-            </div>
+          </div>
         </div>
         
-        <hr className="shopping-hr"/>
-
-        <Footer />
+        <div>
+          <hr className="shopping-hr"/>
+          <Footer />
+        </div>
       </div>
     )
 }

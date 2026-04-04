@@ -95,57 +95,59 @@ const Cart = () => {
  
     return (
       <div className="cart-page-container">
-        <PageTitle title="My Cart | RB Market" />
-        <PayMethodAction from={"/cart?"} />
-        <Navbar />
+        <div className="cart-page-footer-wrapper">
+          <PageTitle title="My Cart | RB Market" />
+          <PayMethodAction from={"/cart?"} />
+          <Navbar />
 
-        <div className="cart-page">
-            <h1>Shopping cart</h1>
-            
-            {cartLoading ? 
-              <div className='auth-loading-screen'>
-                <CircularProgress size={40} thickness={5} />
-              </div>
-              :
-              finalCartItems.length > 0 ? 
-                <>
-                    {!isAuthenticated &&
-                        <div className="not-signed-in-cart">
-                            <span>
-                                <InfoIcon />
-                            </span>
-                            <p>
-                                You're signed out right now. To save these items or see your previously saved items, <button onClick={handleSignIn}>sign in</button>.
-                            </p>
-                        </div>
-                    }
-                    <div className="cart-page-wrapper">
-                      <div className="cart-left">
-                        <CartItems usage="cart" items={finalCartItems} loading={cartLoading} setOverQuantity={setOverQuantity}/>
-                      </div>
-                      <div className="cart-right">
-                        <OrderDetails type="cart"
-                            disabled={formatedPrice === "$0.00"}
-                            itemsLength={cartBadge}
-                            formatedPrice={formatedPrice}
-                            onSubmit={submitBtn}
-                        /> 
-                      </div>
-                    </div>
-                </>
-                :
-                <div className="no-cart-items">
-                    <h3>You don't have any items saved in your cart.</h3>
-                    {!isAuthenticated && <>
-                        <p>Have an account? Sign in to see your items.</p>
-                        <div className="settings-btns no-cart-items-btns">
-                            <Link className="cancel-settings" to="/shopping" role="button">Start shopping</Link>
-                            <Link className="save-settings" to="/sign-in" role="button">Sign in</Link>
-                        </div>
-                    </>
-                    }
+          <div className="cart-page">
+              <h1>Shopping cart</h1>
+              
+              {cartLoading ? 
+                <div className='auth-loading-screen'>
+                  <CircularProgress size={40} thickness={5} />
                 </div>
-            }  
+                :
+                finalCartItems.length > 0 ? 
+                  <>
+                      {!isAuthenticated &&
+                          <div className="not-signed-in-cart">
+                              <span>
+                                  <InfoIcon />
+                              </span>
+                              <p>
+                                  You're signed out right now. To save these items or see your previously saved items, <button onClick={handleSignIn}>sign in</button>.
+                              </p>
+                          </div>
+                      }
+                      <div className="cart-page-wrapper">
+                        <div className="cart-left">
+                          <CartItems usage="cart" items={finalCartItems} loading={cartLoading} setOverQuantity={setOverQuantity}/>
+                        </div>
+                        <div className="cart-right">
+                          <OrderDetails type="cart"
+                              disabled={formatedPrice === "$0.00"}
+                              itemsLength={cartBadge}
+                              formatedPrice={formatedPrice}
+                              onSubmit={submitBtn}
+                          /> 
+                        </div>
+                      </div>
+                  </>
+                  :
+                  <div className="no-cart-items">
+                      <h3>You don't have any items saved in your cart.</h3>
+                      {!isAuthenticated && <>
+                          <p>Have an account? Sign in to see your items.</p>
+                          <div className="settings-btns no-cart-items-btns">
+                              <Link className="cancel-settings" to="/shopping" role="button">Start shopping</Link>
+                              <Link className="save-settings" to="/sign-in" role="button">Sign in</Link>
+                          </div>
+                      </>
+                      }
+                  </div>
+              }  
+          </div>
         </div>
 
         <Footer />

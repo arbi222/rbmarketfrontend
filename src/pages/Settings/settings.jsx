@@ -8,10 +8,12 @@ import "./settings.css";
 const Settings = () => {
   return (
     <div className="settings-wrapper">
-        <PageTitle title="Settings | RB Market" />
-        <PayMethodAction from={"/checkout?"} />
-        <Navbar usage="settings" />
-        <SettingsSections />
+        <div className="settings-page-wrapper">
+          <PageTitle title="Settings | RB Market" />
+          <PayMethodAction from={"/checkout?"} />
+          <Navbar usage="settings" />
+          <SettingsSections />
+        </div>
         <Footer usage="settings"/>
     </div>
   )

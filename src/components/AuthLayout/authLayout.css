@@ -2,6 +2,13 @@
     max-width: var(--max-width);
     margin: 0 auto;
     background-color: var(--color-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-wrapper{
+    flex: 1;
 }
 
 .login-header{

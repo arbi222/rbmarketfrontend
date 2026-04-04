@@ -27,7 +27,7 @@ const Categories = () => {
         if (categories.length === 0){
             dispatch(getAllCategories());
         }
-    }, [categories])
+    }, [])
 
     useEffect(() => {
         if (refetch === "true"){

@@ -1,3 +1,4 @@
+import "./home.css";
 import Navbar from "../../components/Navbar/navbar"
 import ProductCard from '../../components/ProductCard/productCard';
 import Jumbotron from "../../components/Jumbotron/jumbotron";
@@ -31,20 +32,21 @@ const Home = () => {
   }
 
   return (
-    <div className='home-container'>
-      <PageTitle title="Homepage | RB Market" />
-      <PayMethodAction from={"/checkout?"}/>
-      <Navbar usage="home" />
-      
-      {categories.length > 0 &&
-        <ProductCard />
-      }
-
-      <Jumbotron usage="home" />
-
-      {topBrands.length > 0 &&
-        <Brands />
-      }
+    <div className="home-page">
+      <div className="home-page-container">
+        <PageTitle title="Homepage | RB Market" />
+        <PayMethodAction from={"/checkout?"}/>
+        <Navbar usage="home" />
+        {categories.length > 0 &&
+          <ProductCard />
+        }
+        <div style={{marginTop : categories.length < 1 ? "30px" : "0px"}}>
+          <Jumbotron usage="home" />
+        </div>
+        {topBrands.length > 0 &&
+          <Brands />
+        }
+      </div>
 
       <Footer usage="home" />
     </div>

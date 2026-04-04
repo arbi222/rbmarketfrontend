@@ -1,6 +1,13 @@
 .settings-wrapper{
     max-width: 1000px;
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-page-wrapper{
+    flex: 1;
 }
 
 .settings-header{

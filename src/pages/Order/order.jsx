@@ -140,182 +140,184 @@ const Order = () => {
 
     return (
       <div className="order-page">
-        <PageTitle title="View Order | RB Market" />
-        <PayMethodAction from={"/checkout?"} />
-        <Navbar />
+        <div className="order-page-wrapper">
+            <PageTitle title="View Order | RB Market" />
+            <PayMethodAction from={"/checkout?"} />
+            <Navbar />
 
-        <div className="order-container">
-            <h1>
-                Ordered by
-                {order.buyer ? 
-                    <Link to={`/profile/${order.buyer.slug}`}>
-                        {order.buyer.firstName + " " + order.buyer.lastName}
-                    </Link>
-                :
-                    " Deleted User"
-                }
-            </h1>
+            <div className="order-container">
+                <h1>
+                    Ordered by
+                    {order.buyer ? 
+                        <Link to={`/profile/${order.buyer.slug}`}>
+                            {order.buyer.firstName + " " + order.buyer.lastName}
+                        </Link>
+                    :
+                        " Deleted User"
+                    }
+                </h1>
 
-            <div className="order-details">
-                <div className="order-summary">
-                    <h2>Order summary</h2>
-                    <hr className="order-hr-seperator"/>
-                    <div className="order-summary-info">
-                        <div className="order-summary-details">
-                            <p>Order ID: </p>
-                            <span>{order._id}</span>
+                <div className="order-details">
+                    <div className="order-summary">
+                        <h2>Order summary</h2>
+                        <hr className="order-hr-seperator"/>
+                        <div className="order-summary-info">
+                            <div className="order-summary-details">
+                                <p>Order ID: </p>
+                                <span>{order._id}</span>
+                            </div>
+                            <div className="order-summary-details">
+                                <p>Order time: </p>
+                                <span>{timeAgo(order.createdAt)}</span>
+                            </div>
+                            <div className="order-summary-details">
+                                <p>Total amount: </p>
+                                <span>${(order.totalAmount / 100).toFixed(2)}</span>
+                            </div>
+                            <div className="order-summary-details">
+                                <p>Status: </p>
+                                <span>{capitalizeFirstLetter(order.status)}</span>
+                            </div>
+                            {order.payment.provider !== "internal" &&
+                                <>
+                                    <div className="order-summary-details">
+                                        <p>Order type: </p>
+                                        <span>{capitalizeFirstLetter(order.type)}</span>
+                                    </div>
+                                    <div className="order-summary-details">
+                                        <p>Payment method: </p>
+                                        <span>{capitalizeFirstLetter(order.payment.provider)}</span>
+                                    </div>
+                                </>
+                            }
                         </div>
-                        <div className="order-summary-details">
-                            <p>Order time: </p>
-                            <span>{timeAgo(order.createdAt)}</span>
-                        </div>
-                        <div className="order-summary-details">
-                            <p>Total amount: </p>
-                            <span>${(order.totalAmount / 100).toFixed(2)}</span>
-                        </div>
-                        <div className="order-summary-details">
-                            <p>Status: </p>
-                            <span>{capitalizeFirstLetter(order.status)}</span>
-                        </div>
-                        {order.payment.provider !== "internal" &&
+                        {(order.status === "pending" || order.status === "failed") && (userInfo._id === order.buyer?._id) &&
                             <>
-                                <div className="order-summary-details">
-                                    <p>Order type: </p>
-                                    <span>{capitalizeFirstLetter(order.type)}</span>
-                                </div>
-                                <div className="order-summary-details">
-                                    <p>Payment method: </p>
-                                    <span>{capitalizeFirstLetter(order.payment.provider)}</span>
+                                <hr className="order-hr-seperator"/>
+                                <div className="retry-order-section">
+                                    <button className="cancel-order" onClick={() => handleCancelOrder(order._id)}>
+                                        Cancel order
+                                    </button>
+                                    <button className="retry-order" onClick={() => handleNewOrder(order)}>
+                                        Retry order
+                                    </button>
                                 </div>
                             </>
                         }
                     </div>
-                    {(order.status === "pending" || order.status === "failed") && (userInfo._id === order.buyer?._id) &&
-                        <>
+
+                    {order.payment.provider === "internal" &&
+                        <div className="order-shipping-address">
+                            <h2>Shipping address</h2>
                             <hr className="order-hr-seperator"/>
-                            <div className="retry-order-section">
-                                <button className="cancel-order" onClick={() => handleCancelOrder(order._id)}>
-                                    Cancel order
-                                </button>
-                                <button className="retry-order" onClick={() => handleNewOrder(order)}>
-                                    Retry order
-                                </button>
+                            <div className="order-shipping-info">
+                                <div className="order-shipping-details">
+                                    <p>Name: </p>
+                                    <span>{order.shippingAddress.firstName + " " + order.shippingAddress.lastName}</span>
+                                </div>
+                                <div className="order-shipping-details">
+                                    <p>Email: </p>
+                                    <span>{order.shippingAddress.email}</span>
+                                </div>
+                                <div className="order-shipping-details">
+                                    <p>Mobile number: </p>
+                                    <span>{order.shippingAddress.mobileNumber}</span>
+                                </div>
+                                <div className="order-shipping-details">
+                                    <p>Address: </p>
+                                    <span>{order.shippingAddress.country + ", " + order.shippingAddress.city + ", " + 
+                                        order.shippingAddress.street + ", " + order.shippingAddress.postalCode}
+                                    </span>
+                                </div>
                             </div>
-                        </>
+                        </div>
                     }
                 </div>
-
+                
                 {order.payment.provider === "internal" &&
-                    <div className="order-shipping-address">
-                        <h2>Shipping address</h2>
+                    <div className="order-products-container">
+                        <h2>Order item(s)</h2>
                         <hr className="order-hr-seperator"/>
-                        <div className="order-shipping-info">
-                            <div className="order-shipping-details">
-                                <p>Name: </p>
-                                <span>{order.shippingAddress.firstName + " " + order.shippingAddress.lastName}</span>
-                            </div>
-                            <div className="order-shipping-details">
-                                <p>Email: </p>
-                                <span>{order.shippingAddress.email}</span>
-                            </div>
-                            <div className="order-shipping-details">
-                                <p>Mobile number: </p>
-                                <span>{order.shippingAddress.mobileNumber}</span>
-                            </div>
-                            <div className="order-shipping-details">
-                                <p>Address: </p>
-                                <span>{order.shippingAddress.country + ", " + order.shippingAddress.city + ", " + 
-                                    order.shippingAddress.street + ", " + order.shippingAddress.postalCode}
-                                </span>
+                        <div className="order-products-info">
+                            <div className="order-products">
+                                {order.items.map(item => {
+                                    return (
+                                        <div className="order-product" key={item._id}>
+                                            <div className="order-product-wrapper">
+                                                <Link to={`/item/${item.product?.slug || item.productSlug}`}>
+                                                    <img src={item.product?.image || defaultProductPicture} alt="Product image" onError={(e) => {e.currentTarget.src = defaultProductPicture}}/>
+                                                </Link>
+                                                <div className="order-product-title">
+                                                    <Link to={`/item/${item.product?.slug || item.productSlug}`}>
+                                                        <h3>{capitalizeFirstLetter(item.product?.title || item.productTitle)}</h3>
+                                                    </Link>
+                                                </div>
+                                                <hr className="order-hr"/>
+                                                <div className="order-product-details">
+                                                    <p>Condition: </p>
+                                                    <span>{item.product?.condition || item.productCondition}</span>
+                                                </div>
+                                                <div className="order-product-details">
+                                                    <p>Unit price: </p>
+                                                    <span>${(item.unitPrice / 100).toFixed(2)}</span>
+                                                </div>
+                                                <div className="order-product-details">
+                                                    <p>Quantity: </p>
+                                                    <span>{item.quantity}</span>
+                                                </div>
+                                                <div className="order-product-details">
+                                                    <p>Subtotal: </p>
+                                                    <span>${(item.subtotal / 100).toFixed(2)}</span>
+                                                </div>
+                                            </div>
+                                            <hr className="order-hr"/>
+                                            {item.seller ?
+                                                <div className="order-product-seller">
+                                                    <p>Sold by: </p>
+                                                    <div className="order-seller-details">
+                                                        <Link to={`/profile/${item.seller.slug}`}>
+                                                            <img src={item.seller.avatar || defaultProfilePicture} 
+                                                                alt="Profile image" 
+                                                                onError={(e) => {e.currentTarget.src = defaultProfilePicture}}/>
+                                                        </Link>
+                                                        <Link to={`/profile/${item.seller.slug}`}>
+                                                            <h4>{item.seller.firstName + " " + item.seller.lastName}</h4>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                                :
+                                                <div className="order-product-seller">
+                                                    <p>Sold by: </p>
+                                                    <div className="order-seller-details">
+                                                        <img src={defaultProfilePicture} 
+                                                            alt="Profile image" 
+                                                            onError={(e) => {e.currentTarget.src = defaultProfilePicture}}/>
+                                                        <h4>Deleted User</h4>
+                                                    </div>
+                                                </div>
+                                            }
+                                            {(order.status === "delivered" && order.buyer?._id === userInfo._id) &&
+                                                <>
+                                                    {item.seller && 
+                                                        <> 
+                                                            <hr className="order-hr"/>
+                                                            <div className="order-leave-review">
+                                                                <button className="btn" onClick={() => handleWritingReview(item.product.slug)}>
+                                                                    Leave a review
+                                                                </button>
+                                                            </div> 
+                                                        </> 
+                                                    }
+                                                </>
+                                            }
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </div>
                 }
             </div>
-            
-            {order.payment.provider === "internal" &&
-                <div className="order-products-container">
-                    <h2>Order item(s)</h2>
-                    <hr className="order-hr-seperator"/>
-                    <div className="order-products-info">
-                        <div className="order-products">
-                            {order.items.map(item => {
-                                return (
-                                    <div className="order-product" key={item._id}>
-                                        <div className="order-product-wrapper">
-                                            <Link to={`/item/${item.product?.slug || item.productSlug}`}>
-                                                <img src={item.product?.image || defaultProductPicture} alt="Product image" onError={(e) => {e.currentTarget.src = defaultProductPicture}}/>
-                                            </Link>
-                                            <div className="order-product-title">
-                                                <Link to={`/item/${item.product?.slug || item.productSlug}`}>
-                                                    <h3>{capitalizeFirstLetter(item.product?.title || item.productTitle)}</h3>
-                                                </Link>
-                                            </div>
-                                            <hr className="order-hr"/>
-                                            <div className="order-product-details">
-                                                <p>Condition: </p>
-                                                <span>{item.product?.condition || item.productCondition}</span>
-                                            </div>
-                                            <div className="order-product-details">
-                                                <p>Unit price: </p>
-                                                <span>${(item.unitPrice / 100).toFixed(2)}</span>
-                                            </div>
-                                            <div className="order-product-details">
-                                                <p>Quantity: </p>
-                                                <span>{item.quantity}</span>
-                                            </div>
-                                            <div className="order-product-details">
-                                                <p>Subtotal: </p>
-                                                <span>${(item.subtotal / 100).toFixed(2)}</span>
-                                            </div>
-                                        </div>
-                                        <hr className="order-hr"/>
-                                        {item.seller ?
-                                            <div className="order-product-seller">
-                                                <p>Sold by: </p>
-                                                <div className="order-seller-details">
-                                                    <Link to={`/profile/${item.seller.slug}`}>
-                                                        <img src={item.seller.avatar || defaultProfilePicture} 
-                                                            alt="Profile image" 
-                                                            onError={(e) => {e.currentTarget.src = defaultProfilePicture}}/>
-                                                    </Link>
-                                                    <Link to={`/profile/${item.seller.slug}`}>
-                                                        <h4>{item.seller.firstName + " " + item.seller.lastName}</h4>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            :
-                                            <div className="order-product-seller">
-                                                <p>Sold by: </p>
-                                                <div className="order-seller-details">
-                                                    <img src={defaultProfilePicture} 
-                                                        alt="Profile image" 
-                                                        onError={(e) => {e.currentTarget.src = defaultProfilePicture}}/>
-                                                    <h4>Deleted User</h4>
-                                                </div>
-                                            </div>
-                                        }
-                                        {(order.status === "delivered" && order.buyer?._id === userInfo._id) &&
-                                            <>
-                                                {item.seller && 
-                                                    <> 
-                                                        <hr className="order-hr"/>
-                                                        <div className="order-leave-review">
-                                                            <button className="btn" onClick={() => handleWritingReview(item.product.slug)}>
-                                                                Leave a review
-                                                            </button>
-                                                        </div> 
-                                                    </> 
-                                                }
-                                            </>
-                                        }
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
-            }
         </div>
 
         {!loading &&

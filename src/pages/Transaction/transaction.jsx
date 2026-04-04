@@ -4,7 +4,6 @@ import defaultProductPicture from "../../../public/assets/defaultProduct.png";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/Navbar/navbar";
-import Footer from "../../components/Footer/footer";
 import { toast } from "react-toastify";
 import { CircularProgress } from "@mui/material";
 import MarketLogo from "../../components/MarketLogo/marketLogo";
@@ -146,10 +145,6 @@ const Transaction = () => {
                 }
             </div>
         </div>
-
-        {!loading &&
-            <Footer />
-        }
       </div>
     )
 }

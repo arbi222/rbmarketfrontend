@@ -120,11 +120,13 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-        <PageTitle title="Profile | RB Market" />
-        <PayMethodAction from={"/checkout?"} />
-        <Navbar usage="profile" />
-        <ProfileAvatar onSave={handleSave} onLoading={otherLoading} setUploadedFile={setUploadedFile} />
-        <ProfileSections />
+        <div className="profile-wrapper">
+          <PageTitle title="Profile | RB Market" />
+          <PayMethodAction from={"/checkout?"} />
+          <Navbar usage="profile" />
+          <ProfileAvatar onSave={handleSave} onLoading={otherLoading} setUploadedFile={setUploadedFile} />
+          <ProfileSections />
+        </div>
         <Footer usage="profile"/>
     </div>
   )

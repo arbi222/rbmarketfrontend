@@ -5,12 +5,14 @@ import "./authLayout.css";
 const AuthLayout = ({title, children}) => {
   return (
     <div className="login-container">
-        <div className="market-logo">
-            <MarketLogo />
-        </div>
+        <div className="login-wrapper">
+          <div className="market-logo">
+              <MarketLogo />
+          </div>
 
-        <h2 className="login-header">{title}</h2>
-        {children}
+          <h2 className="login-header">{title}</h2>
+          {children}
+        </div>
         
         <div className="footer-login">
             <Footer />
