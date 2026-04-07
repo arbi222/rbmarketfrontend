@@ -529,7 +529,7 @@ const DataShowing = ({usage, items, searchValue, setSearchValue, handleClearSear
                                     {isOrders && item.items.length}
                                     {isTransactions &&
                                         <Link className="transaction-product-link" to={item.relatedProduct && `/item/${item.relatedProduct.slug}`}>
-                                            {item.relatedProduct ? item.relatedProduct.title : "Deleted"}
+                                            {item.relatedProduct ? item.relatedProduct.title : "Not specified"}
                                         </Link>
                                     } 
                                 </div>
