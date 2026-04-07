@@ -519,7 +519,7 @@ const DataShowing = ({usage, items, searchValue, setSearchValue, handleClearSear
                                     ${(item.price / 100).toFixed(2)}
                                 </div>
                                 <div className="price-result stock-header-admin stock-available">
-                                    ${item.stock} available
+                                    {item.stock} available
                                 </div>
                             </>
                         }
