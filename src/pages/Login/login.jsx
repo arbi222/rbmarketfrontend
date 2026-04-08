@@ -38,8 +38,6 @@ const Login = () => {
         }
     }, [requires2FA]);
 
-    console.log(generalPopUp)
-
     useEffect(() => {
         if (statusReason) {
             dispatch(openGeneralPopUp("BannedAccount"));

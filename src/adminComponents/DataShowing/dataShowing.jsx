@@ -244,10 +244,6 @@ const DataShowing = ({usage, items, searchValue, setSearchValue, handleClearSear
 
     const handleDeleteUser = async () => {
         if (!isUsers) return;
-        if (userInfo.isAdmin){
-            toast.error("Admin can not delete his own account.");
-            return;
-        }
         try{
             setLoading(true);
             await performAccountDeletion(userSlug, imageFilePath);
