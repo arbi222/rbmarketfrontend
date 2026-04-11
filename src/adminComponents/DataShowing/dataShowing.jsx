@@ -246,6 +246,7 @@ const DataShowing = ({usage, items, searchValue, setSearchValue, handleClearSear
         if (!isUsers) return;
         if (deleteItemId === userInfo._id){
             toast.warn("Admin can not delete his own account!");
+            return;
         }
         try{
             setLoading(true);
