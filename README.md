@@ -18,7 +18,7 @@ RB Market is a production-ready multi-vendor eCommerce platform. This repository
 ### For Buyers
 - Browse and search products
 - Guest cart — add to cart and checkout without an account
-- Secure checkout with **Stripe** or **PayPal**
+- Secure checkout with **Internal Wallet**, **Stripe** or **PayPal**
 - Order tracking and history
 - Leave product reviews and ratings
 - Real-time notifications via Socket.io
@@ -33,7 +33,7 @@ RB Market is a production-ready multi-vendor eCommerce platform. This repository
 - Register / Login with email and password
 - Google OAuth 2.0 login
 - Two-Factor Authentication (2FA) via email OTP
-- Email verification on signup
+- Email verification
 
 ### Admin Panel
 - Full platform management
