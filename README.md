@@ -57,13 +57,6 @@ RB Market is a production-ready multi-vendor eCommerce platform. This repository
 
 ---
 
-## Related Repositories
-
-- [rbMarketBackend](https://github.com/arbi222/rbMarketBackend) — Node.js/Express backend
-- [arbihamolli.com](https://arbihamolli.com) — Developer portfolio
-
----
-
 ## Author
 
 **Arbi Hamolli** — Full-Stack Web Developer  
